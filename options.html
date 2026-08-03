@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DeepSeek 网页双语翻译 - 管理后台</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <header>
+        <p class="eyebrow">个人翻译配置</p>
+        <h1>DeepSeek 网页双语翻译</h1>
+        <p class="subtitle">管理 API Token 和翻译模型。保存后立即对新翻译生效。</p>
+      </header>
+      <section class="card" aria-labelledby="api-heading">
+        <h2 id="api-heading">DeepSeek API</h2>
+        <label for="token">API Token</label>
+        <div class="input-row">
+          <input id="token" type="password" autocomplete="off" spellcheck="false" placeholder="sk-..." />
+          <button id="toggleToken" class="toggle" type="button">显示</button>
+        </div>
+        <p class="help">Token 仅保存在当前浏览器的扩展本地存储中，并仅发送至 DeepSeek API。译文缓存保留 7 天后自动清理。</p>
+
+        <label for="model">翻译模型</label>
+        <select id="model">
+          <option value="deepseek-v4-flash">deepseek-v4-flash（推荐，速度更快）</option>
+          <option value="deepseek-v4-pro">deepseek-v4-pro（质量更高，价格更高）</option>
+        </select>
+        <p class="help">模型名称以 DeepSeek 账户可用范围为准。</p>
+
+        <label for="speechProvider">朗读服务</label>
+        <select id="speechProvider">
+          <option value="browser">使用 Chrome 本机音色</option>
+          <option value="edgeTts">使用 Edge TTS 本地服务（推荐句子朗读）</option>
+          <option value="doubaoTts">使用豆包语音合成 2.0</option>
+        </select>
+        <div id="edgeTtsSettings" hidden>
+          <label for="edgeTtsEndpoint">本地服务地址</label>
+          <input id="edgeTtsEndpoint" type="url" inputmode="url" spellcheck="false" placeholder="http://127.0.0.1:8765" />
+          <label for="edgeTtsVoice">Edge 英语音色</label>
+          <input id="edgeTtsVoice" list="edgeTtsVoices" spellcheck="false" placeholder="en-US-AriaNeural" />
+          <datalist id="edgeTtsVoices">
+            <option value="en-US-AriaNeural"></option>
+            <option value="en-US-JennyNeural"></option>
+            <option value="en-US-GuyNeural"></option>
+            <option value="en-GB-SoniaNeural"></option>
+            <option value="en-GB-RyanNeural"></option>
+          </datalist>
+          <p id="edgeTtsStatus" class="help" role="status">将检测本机 Edge TTS 服务是否已启动。</p>
+          <p class="help">需先在电脑上启动扩展目录中的 <code>start-edge-tts-service.cmd</code>。该服务无需 API Token；未检测到服务时会自动使用 Chrome 朗读。</p>
+        </div>
+        <div id="doubaoTtsSettings" hidden>
+          <label for="doubaoApiKey">豆包语音 API Key</label>
+          <input id="doubaoApiKey" type="password" autocomplete="off" spellcheck="false" placeholder="在火山引擎 API Key 管理中创建" />
+          <label for="doubaoChineseVoice">中文音色 ID</label>
+          <input id="doubaoChineseVoice" spellcheck="false" value="zh_female_lingling_uranus_bigtts" />
+          <label for="doubaoEnglishVoice">英文音色 ID</label>
+          <input id="doubaoEnglishVoice" spellcheck="false" value="en_female_pleasant-female_uranus_bigtts" />
+          <p class="help">使用豆包语音合成 2.0（<code>seed-tts-2.0</code>）。新版控制台只需填写 API Key；凭证仅保存在本机扩展存储中。</p>
+          <button id="testDoubaoVoice" class="secondary inline-action" type="button">测试英文音色</button>
+        </div>
+        <div class="actions">
+          <button id="save" class="primary" type="button">保存配置</button>
+          <button id="clear" class="secondary" type="button">清除 Token</button>
+          <button id="clearCache" class="secondary" type="button">清除翻译缓存</button>
+        </div>
+        <p id="status" role="status" aria-live="polite"></p>
+      </section>
+      <section class="card vocabulary-card" aria-labelledby="vocabulary-heading">
+        <div class="vocabulary-heading">
+          <div><p class="eyebrow">PERSONAL VOCABULARY</p><h2 id="vocabulary-heading">生词本</h2></div>
+          <span id="vocabularyCount" class="count-badge">0 词</span>
+        </div>
+        <p class="help">在网页译文卡片中选中单词或短语，查词后可加入生词本。所有内容仅保存在本机。</p>
+        <div class="vocabulary-tools">
+          <input id="vocabularySearch" type="search" placeholder="搜索单词、释义或用法" />
+          <select id="vocabularyFilter" aria-label="筛选学习状态">
+            <option value="all">全部</option>
+            <option value="learning">学习中</option>
+            <option value="mastered">已掌握</option>
+          </select>
+          <button id="startReview" class="primary" type="button">开始复习</button>
+        </div>
+        <section id="reviewPanel" class="review-panel" hidden></section>
+        <div id="vocabularyList" class="vocabulary-list"></div>
+      </section>
+      <section class="card small">
+        <h2>使用方式</h2>
+        <p>保存后，回到任意网页点击扩展图标，再选择“翻译当前页面”。原文将保留，译文显示在下方。</p>
+      </section>
+    </main>
+    <script src="options.js"></script>
+  </body>
+</html>

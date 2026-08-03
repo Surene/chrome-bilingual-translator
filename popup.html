@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>网页双语翻译</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main>
+      <h1>网页双语翻译</h1>
+      <p class="hint">原文保留，译文显示在下一行。</p>
+      <p id="modelInfo" class="privacy">正在读取翻译配置…</p>
+      <button id="translate" class="primary">翻译当前页面</button>
+      <button id="restore" class="secondary">隐藏本页译文</button>
+      <button id="practice" class="practice">翻译练习（先选中网页原文）</button>
+      <section id="progressPanel" class="progress-panel" hidden aria-live="polite">
+        <div class="progress-title"><span id="progressLabel">准备翻译</span><strong id="progressPercent">0%</strong></div>
+        <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+        <p id="progressDetail">正在分析页面内容…</p>
+      </section>
+      <button id="settings" class="text-button">管理 Token、模型和生词本</button>
+      <p id="status" role="status" aria-live="polite"></p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

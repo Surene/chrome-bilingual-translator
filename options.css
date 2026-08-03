@@ -1,0 +1,67 @@
+:root { color-scheme: light dark; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+* { box-sizing: border-box; }
+body { min-width: 560px; margin: 0; background: #f5f8fc; color: #172033; }
+.layout { width: min(680px, calc(100% - 40px)); margin: 56px auto; }
+header { margin-bottom: 26px; }
+.eyebrow { margin: 0 0 7px; color: #2563eb; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+h1 { margin: 0; font-size: 28px; letter-spacing: -.03em; }
+.subtitle { margin: 10px 0 0; color: #64748b; line-height: 1.6; }
+.card { padding: 26px; border: 1px solid #d9e2f0; border-radius: 12px; background: #fff; box-shadow: 0 5px 18px rgb(15 23 42 / 5%); }
+.card + .card { margin-top: 16px; }
+h2 { margin: 0 0 20px; font-size: 17px; }
+label { display: block; margin: 20px 0 7px; font-size: 14px; font-weight: 650; }
+.input-row { display: flex; }
+input, select { width: 100%; min-height: 42px; padding: 9px 11px; border: 1px solid #b8c6d9; border-radius: 7px; background: #fff; color: #172033; font: inherit; outline: none; }
+.input-row input { border-radius: 7px 0 0 7px; }
+input:focus, select:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgb(37 99 235 / 14%); }
+.toggle { width: 64px; border: 1px solid #b8c6d9; border-left: 0; border-radius: 0 7px 7px 0; background: #edf2f8; color: #334155; cursor: pointer; }
+.help { margin: 7px 0 0; color: #64748b; font-size: 12px; line-height: 1.5; }
+.help.error { color: #b42318; }
+.actions { display: flex; gap: 10px; margin-top: 25px; }
+.inline-action { min-height: 34px; margin-top: 13px; padding: 7px 11px; }
+button { min-height: 40px; padding: 9px 15px; border: 0; border-radius: 7px; cursor: pointer; font: inherit; font-weight: 600; }
+.primary { background: #2563eb; color: #fff; }
+.primary:hover { background: #1d4ed8; }
+.secondary { background: #e8eef7; color: #334155; }
+#status { min-height: 20px; margin: 16px 0 0; color: #15803d; font-size: 13px; }
+#status.error { color: #b42318; }
+.small p { margin: 0; color: #475569; line-height: 1.65; }
+.vocabulary-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.vocabulary-heading .eyebrow { margin-bottom: 5px; }
+.vocabulary-heading h2 { margin-bottom: 0; }
+.count-badge { display: inline-block; padding: 5px 9px; border-radius: 999px; background: #eaf2ff; color: #1d4ed8; font-size: 12px; font-weight: 700; white-space: nowrap; }
+.vocabulary-tools { display: grid; grid-template-columns: minmax(0, 1fr) 112px auto; gap: 9px; margin-top: 18px; }
+.vocabulary-tools input { border-radius: 7px; }
+.vocabulary-tools .primary { min-width: 90px; }
+.review-panel { margin-top: 16px; padding: 18px; border: 1px solid #cfe0fb; border-radius: 10px; background: #f5f9ff; }
+.review-kicker { margin: 0 0 5px; color: #2563eb; font-size: 11px; font-weight: 750; letter-spacing: .08em; }
+.review-term { margin: 0; color: #172033; font-size: 25px; line-height: 1.25; }
+.review-context { margin: 10px 0 0; color: #64748b; font-size: 13px; line-height: 1.55; }
+.review-answer { margin-top: 13px; padding-top: 13px; border-top: 1px solid #d9e6f8; }
+.review-answer strong { color: #1d4ed8; }
+.review-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+.review-actions button { min-height: 34px; padding: 7px 11px; }
+.vocabulary-list { margin-top: 18px; }
+.vocabulary-empty { margin: 0; padding: 22px 8px; color: #64748b; text-align: center; font-size: 13px; }
+.vocabulary-item { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 14px; padding: 15px 0; border-top: 1px solid #e3eaf3; }
+.vocabulary-term-row, .vocabulary-sentence-row { display: flex; align-items: flex-start; gap: 8px; }
+.vocabulary-term { margin: 0; color: #172033; font-size: 17px; line-height: 1.35; }
+.vocabulary-speak { flex: 0 0 auto; display: inline-grid; place-items: center; width: 30px; height: 30px; padding: 0; border: 1px solid #bfdbfe; border-radius: 8px; background: #eff6ff; color: #2563eb; font-size: 14px; line-height: 1; cursor: pointer; }
+.vocabulary-speak:hover { border-color: #60a5fa; background: #dbeafe; }
+.vocabulary-speak:disabled { opacity: .55; cursor: wait; }
+.vocabulary-sentence-row .vocabulary-speak { margin-top: 6px; }
+.vocabulary-meaning { margin: 4px 0 0; color: #1d4ed8; font-size: 14px; font-weight: 650; }
+.vocabulary-note, .vocabulary-referent { margin: 7px 0 0; color: #64748b; font-size: 12px; line-height: 1.5; }
+.vocabulary-sentence { margin: 10px 0 0; color: #334155; font-size: 13px; line-height: 1.6; }
+.vocabulary-source { margin: 5px 0 0; color: #64748b; font-size: 12px; line-height: 1.55; }
+.vocabulary-examples { margin-top: 10px; }
+.vocabulary-examples summary { color: #52657f; font-size: 12px; font-weight: 700; cursor: pointer; }
+.vocabulary-example { margin-top: 8px; padding: 9px 10px; border-left: 2px solid #bfdbfe; border-radius: 0 7px 7px 0; background: #f7faff; }
+.vocabulary-example .vocabulary-sentence { margin-top: 0; }
+.vocabulary-referent { padding-left: 8px; border-left: 2px solid #93c5fd; color: #315682; }
+.vocabulary-actions { display: flex; align-items: flex-start; gap: 6px; }
+.vocabulary-actions button { min-height: 30px; padding: 6px 8px; border-radius: 6px; background: #eef3f9; color: #475569; font-size: 12px; }
+.vocabulary-actions .mastered { background: #ecfdf3; color: #15803d; }
+.vocabulary-actions .remove { color: #b42318; }
+@media (max-width: 680px) { body { min-width: 0; } .vocabulary-tools { grid-template-columns: 1fr 100px; } .vocabulary-tools .primary { grid-column: 1 / -1; } }
+@media (prefers-color-scheme: dark) { body { background: #0c1422; color: #e5edf9; } .subtitle, .help, .small p, .review-context, .vocabulary-note, .vocabulary-source { color: #afbdd1; } .card { border-color: #314158; background: #151f2f; box-shadow: none; } input, select { border-color: #516078; background: #101827; color: #e5edf9; } .toggle, .secondary, .vocabulary-actions button { background: #26354c; color: #e5edf9; } .count-badge { background: #18345f; color: #bfdbfe; } .review-panel { border-color: #31567f; background: #132946; } .review-term, .vocabulary-term, .vocabulary-sentence { color: #e5edf9; } .review-answer { border-color: #31567f; } .vocabulary-item { border-color: #314158; } .vocabulary-referent { color: #bfdbfe; } .vocabulary-examples summary { color: #bfdbfe; } .vocabulary-example { border-color: #315d97; background: #142544; } .vocabulary-actions .mastered { background: #153b2c; color: #86efac; } .vocabulary-speak { border-color: #315d97; background: #142544; color: #bfdbfe; } .vocabulary-speak:hover { background: #1b365b; } }
