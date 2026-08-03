@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>翻译练习真实调用示例</title>
+  <link rel="stylesheet" href="../content.css">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #eaf0f8; color: #172033; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif; }
+    .demo-page { min-height: 100vh; padding: 52px 40px 72px; background: linear-gradient(145deg, #edf4ff 0%, #f7f9fd 46%, #e7eef8 100%); }
+    .demo-caption { width: min(1180px, 100%); margin: 0 auto 18px; color: #64748b; font-size: 14px; }
+    .demo-caption strong { color: #2563eb; }
+    .ds-practice-overlay { position: static !important; display: block !important; padding: 0 !important; background: transparent !important; }
+    .ds-practice-card { width: min(1180px, 100%) !important; max-height: none !important; margin: 0 auto !important; padding: 34px !important; overflow: visible !important; border-radius: 18px !important; }
+    .ds-practice-header h2 { font-size: 28px !important; }
+    .ds-practice-header p { font-size: 13px !important; }
+    .ds-practice-close { pointer-events: none; }
+    .ds-practice-source, .ds-practice-input { font-size: 16px !important; line-height: 1.7 !important; }
+    .ds-practice-input { min-height: 132px !important; }
+    .ds-practice-submit { font-size: 16px !important; }
+    .ds-practice-score strong { font-size: 54px !important; }
+    .ds-practice-summary { font-size: 16px !important; }
+    .ds-practice-grid li, .ds-practice-grid p, .ds-practice-answer p { font-size: 14px !important; }
+    .ds-sentence-analysis > h3 { font-size: 22px !important; }
+    .ds-sentence-card { padding: 20px !important; }
+    .ds-sentence-card > header > span { font-size: 15px !important; }
+    .ds-sentence-card > header > p { font-size: 15px !important; }
+    .ds-sentence-compare h4, .ds-analysis-heading { font-size: 12px !important; }
+    .ds-sentence-compare p { font-size: 15px !important; }
+    .ds-analysis-issues p, .ds-analysis-issues small, .ds-analysis-issues strong, .ds-knowledge-points p, .ds-knowledge-points strong { font-size: 13px !important; }
+    @media (max-width: 800px) { .demo-page { padding: 18px 12px; } .ds-practice-card { padding: 20px !important; } }
+  </style>
+</head>
+<body>
+  <main class="demo-page">
+    <p class="demo-caption"><strong>Chrome Bilingual Translator</strong> · DeepSeek v4 Flash 真实批改示例</p>
+    <div class="ds-practice-overlay">
+      <section class="ds-practice-card" role="dialog" aria-modal="true" aria-label="翻译练习示例">
+        <header class="ds-practice-header">
+          <div><p>TRANSLATION PRACTICE</p><h2>我的翻译练习</h2></div>
+          <button class="ds-practice-close" type="button" aria-label="关闭">×</button>
+        </header>
+
+        <section class="ds-practice-section">
+          <span class="ds-practice-label">原文</span>
+          <p class="ds-practice-source">However, I must say that their conclusion convinced me: from the perspective of entropy, if we do not change our development model, humanity cannot continue to develop. I also found that entropy is a theory with extremely strong explanatory power; many phenomena can be explained by entropy, and it seems very reasonable.</p>
+        </section>
+        <label class="ds-practice-section">
+          <span class="ds-practice-label">我的译文</span>
+          <textarea class="ds-practice-input" readonly>但是，我必须说他们的结论说服了我，这个结论就是，从熵增视角看，如果我们不改变发展方式，人类就不能获得更好的发展。我也发现熵是一种有极大解释性力量的理论。许多哲学问题也能够用熵来解释，并且看起来十分合理。</textarea>
+        </label>
+        <div class="ds-practice-actions"><button class="ds-practice-submit" type="button">提交并获取批改</button><span class="ds-practice-status">批改完成</span></div>
+
+        <div class="ds-practice-result">
+          <div class="ds-practice-score"><strong>88</strong><span>/ 100 分</span></div>
+          <p class="ds-practice-summary">整体翻译准确，传达了原文的主要意思。但存在一些用词和表达上的小问题，如“熵增视角”不够准确，“发展方式”与“发展模式”有细微差别，“解释性力量”略显生硬，“许多哲学问题”应为“许多现象”。建议优化这些表达，使译文更自然、准确。</p>
+          <div class="ds-practice-grid">
+            <section><h3>做得好</h3><ul><li>整体结构清晰，逻辑连贯。</li><li>关键词“熵”翻译准确。</li><li>句子基本通顺，易于理解。</li></ul></section>
+            <section><h3>建议改进</h3><ul><li>“熵增视角”宜改为“从熵的角度来看”。</li><li>“发展方式”改为“发展模式”更贴近 development model。</li><li>“解释性力量”改为“解释力”更自然。</li><li>many phenomena 应译为“许多现象”。</li></ul></section>
+          </div>
+
+          <section class="ds-sentence-analysis"><h3>逐句对照讲解</h3>
+            <article class="ds-sentence-card">
+              <header><span>第 1 句</span><p>翻译基本准确，但存在用词和表达上的小问题。</p></header>
+              <div class="ds-sentence-compare">
+                <section><h4>原文</h4><p>However, I must say that their conclusion convinced me: from the perspective of entropy, if we do not change our development model, humanity cannot continue to develop.</p></section>
+                <section><h4>参考译文</h4><p>然而，我必须说，他们的结论说服了我：从熵的角度来看，如果我们不改变我们的发展模式，人类就无法继续发展。</p></section>
+                <section><h4>我的译文</h4><p>但是，我必须说他们的结论说服了我，这个结论就是，从熵增视角看，如果我们不改变发展方式，人类就不能获得更好的发展。</p></section>
+              </div>
+              <h4 class="ds-analysis-heading">问题与改进</h4>
+              <div class="ds-analysis-issues">
+                <article><span>词汇</span><p>“from the perspective of entropy” 表示“从熵的角度”，不是“熵增”的视角。</p><small>原文：from the perspective of entropy<br>练习：从熵增视角看</small><strong>建议：改为“从熵的角度来看”或“从熵的视角看”。</strong></article>
+                <article><span>词汇</span><p>development model 更接近“发展模式”，而非“发展方式”。</p><small>原文：development model<br>练习：发展方式</small><strong>建议：改为“发展模式”。</strong></article>
+                <article><span>表达</span><p>原文强调“无法继续发展”，加入“更好的”会改变原意。</p><small>原文：cannot continue to develop<br>练习：不能获得更好的发展</small><strong>建议：改为“人类就无法继续发展”。</strong></article>
+              </div>
+              <h4 class="ds-analysis-heading">知识点</h4>
+              <div class="ds-knowledge-points"><article><span>词汇</span><strong>perspective</strong><p>常译为“角度、视角”；此处修饰 entropy，而不是 entropy increase（熵增）。</p></article><article><span>词汇</span><strong>development model</strong><p>model 是“模式”，强调发展所遵循的整体模型。</p></article></div>
+            </article>
+
+            <article class="ds-sentence-card">
+              <header><span>第 2 句</span><p>翻译基本准确，但存在用词和表达上的小问题。</p></header>
+              <div class="ds-sentence-compare">
+                <section><h4>原文</h4><p>I also found that entropy is a theory with extremely strong explanatory power; many phenomena can be explained by entropy, and it seems very reasonable.</p></section>
+                <section><h4>参考译文</h4><p>我还发现，熵是一种具有极强解释力的理论；许多现象都可以用熵来解释，而且这看起来非常合理。</p></section>
+                <section><h4>我的译文</h4><p>我也发现熵是一种有极大解释性力量的理论。许多哲学问题也能够用熵来解释，并且看起来十分合理。</p></section>
+              </div>
+              <h4 class="ds-analysis-heading">问题与改进</h4>
+              <div class="ds-analysis-issues">
+                <article><span>短语搭配</span><p>“解释性力量”不符合常用搭配，通常说“解释力”或“解释能力”。</p><small>原文：extremely strong explanatory power<br>练习：极大解释性力量</small><strong>建议：改为“极强的解释力”。</strong></article>
+                <article><span>词汇</span><p>phenomena 是“现象”的复数，不是“哲学问题”。</p><small>原文：many phenomena<br>练习：许多哲学问题</small><strong>建议：改为“许多现象”。</strong></article>
+                <article><span>表达</span><p>it 指代前文的理论或解释；明确补出“这”会更自然。</p><small>原文：it seems very reasonable<br>练习：看起来十分合理</small><strong>建议：改为“而且这看起来非常合理”。</strong></article>
+              </div>
+              <h4 class="ds-analysis-heading">知识点</h4>
+              <div class="ds-knowledge-points"><article><span>词汇</span><strong>phenomena</strong><p>phenomenon 的复数，表示“现象”；不要误译为“问题”。</p></article><article><span>短语搭配</span><strong>explanatory power</strong><p>学术语境中常译为“解释力”，简洁而专业。</p></article></div>
+            </article>
+          </section>
+
+          <section class="ds-practice-answer"><h3>参考译文</h3><p>然而，我必须说，他们的结论说服了我：从熵的角度来看，如果我们不改变我们的发展模式，人类就无法继续发展。我还发现，熵是一种具有极强解释力的理论；许多现象都可以用熵来解释，而且这看起来非常合理。</p></section>
+          <section class="ds-practice-answer"><h3>建议修改版</h3><p>然而，我必须说，他们的结论说服了我：从熵的角度来看，如果我们不改变发展模式，人类就无法继续发展。我还发现，熵是一种具有极强解释力的理论；许多现象都可以用熵来解释，而且这看起来非常合理。</p></section>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
