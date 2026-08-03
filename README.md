@@ -17,9 +17,7 @@
 
 原文段落保持网页原有排版，译文以带蓝色侧边标记的卡片紧随在下方，方便逐段阅读与对照；在译文卡片内选中单词或短语后可继续查询、朗读并加入生词本。
 
-![网页双语对照翻译界面](docs/images/webpage-translation-example.png)
-
-可直接在浏览器中查看 [网页翻译静态演示页](docs/webpage-translation-example.html)。该图由扩展的 `.ds-bilingual-translation` 卡片样式在本机 Chrome 重新渲染，不使用用户截图。
+<img src="docs/images/webpage-translation-example.png" alt="网页双语对照翻译界面" width="900">
 
 ## 真实批改示例
 
